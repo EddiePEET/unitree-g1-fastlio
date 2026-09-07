@@ -38,17 +38,19 @@ Unitree G1 + Livox MID360 的 ROS 2 建图与导航工作空间快照。当前�
 - Ubuntu 20.04
 - ROS 2 Foxy
 - `colcon` 与 `rosdep`
+- Git LFS（用于获取仓库内的 Unitree 预编译库）
 - PCL、Eigen、Nav2
 - Livox MID360
 - 真实 G1 控制需要单独配置 Unitree ROS 2/CycloneDDS 环境
 
-仓库包含第三方源码与部分厂商预编译库，支持 `x86_64` 和 `aarch64`。请根据实际主机架构、ROS 2 安装和设备网络配置进行验证。
+仓库包含第三方源码与部分厂商预编译库，支持 `x86_64` 和 `aarch64`。两个 Unitree 静态库通过 Git LFS 保存；ZIP 清理包内则包含完整库文件。请根据实际主机架构、ROS 2 安装和设备网络配置进行验证。
 
 ## 获取与编译
 
 ```bash
 git clone https://github.com/EddiePEET/unitree-g1-fastlio.git
 cd unitree-g1-fastlio
+git lfs pull
 
 source /opt/ros/foxy/setup.bash
 rosdep install --from-paths src --ignore-src -r -y
