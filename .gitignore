@@ -68,3 +68,7 @@ Thumbs.db
 # Oversized upstream documentation demos (not used at build/runtime)
 src/FAST_LIO_ROS2/doc/real_experiment2.gif
 src/FAST_LIO_ROS2/doc/ulhkwh_fastlio.gif
+
+# Restored locally from the tracked compressed vendor archives
+third_party/unitree_sdk2_native/lib/aarch64/libunitree_sdk2.a
+third_party/unitree_sdk2_native/lib/x86_64/libunitree_sdk2.a
