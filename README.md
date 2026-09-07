@@ -145,6 +145,7 @@ export UNITREE_ROS2_SETUP=/path/to/cyclonedds_ws/install/setup.bash
 - 嵌套仓库的 `.git/` 历史
 - Python 缓存、IDE 配置、编辑器临时文件
 - 本地备份目录及 `.bak`、`.before` 等历史副本
+- 两个仅用于上游文档展示、且不参与编译或运行的大型 FAST-LIO GIF（单个约 50 MB/34 MB）
 
 ## 许可证
 
