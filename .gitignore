@@ -1,0 +1,66 @@
+# ROS 2 / colcon / CMake
+build/
+install/
+log/
+runtime/
+.colcon/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+
+# Runtime recordings and crash dumps
+*.bag
+*.db3
+*.mcap
+*.log
+*.pid
+*.pids
+core
+core.*
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.cache/
+.venv/
+venv/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.*
+secrets.*
+
+# Local backup and editor files
+backup/
+*.bak
+*.bak_*
+*.before
+*.before_*
+*.orig
+*.rej
+*.save
+*.swp
+*.swo
+*~
+
+# IDE / OS
+.idea/
+.vscode/
+.vs/
+.clangd/
+.DS_Store
+Thumbs.db
+
+# Nested repository metadata
+.git/
