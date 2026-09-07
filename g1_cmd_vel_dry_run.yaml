@@ -1,0 +1,27 @@
+/g1_cmd_vel_dry_run:
+  ros__parameters:
+    allow_lateral: false
+    allow_reverse: false
+    angular_deadband: 0.05
+    cmd_vel_topic: /cmd_vel_nav
+    command_timeout_sec: 0.5
+    control_period_sec: 0.05
+    dry_run: false
+    enable_service_name: /g1_loco_bridge/enable_real_nav
+    linear_deadband: 0.02
+    max_angular_accel: 0.4
+    max_angular_decel: 0.8
+    max_angular_z: 0.4
+    max_linear_accel: 0.2
+    max_linear_decel: 0.4
+    max_linear_x: 0.2
+    max_linear_y: 0.05
+    min_effective_angular_z: 0.4
+    min_effective_linear_x: 0.2
+    reject_abs_angular_z: 0.8
+    reject_abs_linear_x: 0.5
+    reject_abs_linear_y: 0.2
+    report_period_sec: 0.5
+    unitree_command_duration_sec: 1.0
+    unitree_resend_period_sec: 0.1
+    use_sim_time: false
