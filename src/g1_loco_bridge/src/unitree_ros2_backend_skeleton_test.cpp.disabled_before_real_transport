@@ -1,0 +1,70 @@
+#include <chrono>
+#include <memory>
+#include <thread>
+
+#include <rclcpp/rclcpp.hpp>
+
+#include "g1_loco_bridge/unitree_ros2_backend.hpp"
+#include "g1_loco_bridge/velocity_backend.hpp"
+
+using namespace std::chrono_literals;
+
+int main(int argc, char ** argv)
+{
+  rclcpp::init(argc, argv);
+
+  auto node =
+    std::make_shared<rclcpp::Node>(
+      "g1_unitree_backend_skeleton_test");
+
+  {
+    g1_loco_bridge::UnitreeRos2Backend backend(
+      node.get(),
+      node->get_logger(),
+      0.30,
+      0.10);
+
+    g1_loco_bridge::VelocityCommand command;
+    command.vx = 0.05F;
+    command.vy = 0.0F;
+    command.omega = 0.05F;
+
+    RCLCPP_INFO(
+      node->get_logger(),
+      "TEST 1: submit while backend gate is disabled.");
+
+    backend.submit_velocity(command);
+    std::this_thread::sleep_for(100ms);
+
+    RCLCPP_INFO(
+      node->get_logger(),
+      "TEST 2: enable skeleton and submit newest command.");
+
+    backend.set_enabled(true);
+    backend.submit_velocity(command);
+    std::this_thread::sleep_for(200ms);
+
+    RCLCPP_INFO(
+      node->get_logger(),
+      "TEST 3: request safe stop.");
+
+    backend.request_stop("independent skeleton test");
+    std::this_thread::sleep_for(100ms);
+
+    RCLCPP_INFO(
+      node->get_logger(),
+      "TEST 4: disable and shut down.");
+
+    backend.set_enabled(false);
+    std::this_thread::sleep_for(100ms);
+    backend.shutdown();
+  }
+
+  node.reset();
+
+  if (rclcpp::ok()) {
+    rclcpp::shutdown();
+  }
+
+  return 0;
+}

@@ -1,0 +1,23 @@
+g1_relocalization:
+  ros__parameters:
+    map_path: ""
+
+    global_frame: "map"
+    odom_frame: "camera_init"
+    body_frame: "body"
+    body_roll_deg: 180.0   # 倒装MID360 body到机器人base的滚转角
+
+    input_cloud_topic: "/cloud_registered_body"
+    odometry_topic: "/Odometry"
+    initial_pose_topic: "/initialpose"
+
+    map_voxel_size: 0.25
+    scan_voxel_size: 0.20
+
+    ndt_resolution: 1.0
+    ndt_step_size: 0.1
+    ndt_transformation_epsilon: 0.01
+    ndt_max_iterations: 40
+
+    fitness_threshold: 2.0
+    localization_period_ms: 500

@@ -1,0 +1,40 @@
+g1_cmd_vel_dry_run:
+  ros__parameters:
+    cmd_vel_topic: /cmd_vel_dry_test
+    enable_service_name: /g1_loco_bridge/enable
+
+    # 第 11 步及默认启动必须保持 true。
+    # 只有后续禁用启动验证才允许显式设置为 false。
+    dry_run: true
+
+    # 第一次实机阶段固定禁止倒退和横移。
+    allow_reverse: false
+    allow_lateral: false
+
+    # 真实后端每条速度命令的有限有效期，以及续发周期。
+    unitree_command_duration_sec: 0.30
+    unitree_resend_period_sec: 0.10
+
+    command_timeout_sec: 0.5
+    control_period_sec: 0.05
+    report_period_sec: 2.0
+
+    # 最终安全输出的硬限幅
+    max_linear_x: 0.20
+    max_linear_y: 0.10
+    max_angular_z: 0.30
+
+    # 原始 Twist 超过这些值时，拒绝整条命令。
+    # 位于硬限幅与拒绝阈值之间的输入仍允许被截断。
+    reject_abs_linear_x: 1.00
+    reject_abs_linear_y: 0.50
+    reject_abs_angular_z: 1.50
+
+    linear_deadband: 0.01
+    angular_deadband: 0.02
+
+    max_linear_accel: 0.20
+    max_linear_decel: 0.40
+
+    max_angular_accel: 0.40
+    max_angular_decel: 0.80

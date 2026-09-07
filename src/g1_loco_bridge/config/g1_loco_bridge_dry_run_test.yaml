@@ -1,0 +1,24 @@
+g1_cmd_vel_dry_run:
+  ros__parameters:
+    cmd_vel_topic: /cmd_vel_dry_test
+    enable_service_name: /g1_loco_bridge/enable
+    dry_run: true
+    allow_reverse: false
+    allow_lateral: false
+    unitree_command_duration_sec: 0.3
+    unitree_resend_period_sec: 0.1
+    command_timeout_sec: 0.5
+    control_period_sec: 0.05
+    report_period_sec: 2.0
+    max_linear_x: 0.2
+    max_linear_y: 0.1
+    max_angular_z: 0.3
+    reject_abs_linear_x: 1.0
+    reject_abs_linear_y: 0.5
+    reject_abs_angular_z: 1.5
+    linear_deadband: 0.01
+    angular_deadband: 0.02
+    max_linear_accel: 0.2
+    max_linear_decel: 0.4
+    max_angular_accel: 0.4
+    max_angular_decel: 0.8

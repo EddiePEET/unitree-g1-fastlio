@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>g1_unitree_ros2_probe</name>
+  <version>0.0.1</version>
+  <description>Read-only probe for the official Unitree ROS 2 G1 LocoClient.</description>
+
+  <maintainer email="g1test@example.com">g1test</maintainer>
+  <license>BSD-3-Clause</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>unitree_api</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
