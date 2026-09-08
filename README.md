@@ -1,4 +1,4 @@
-# unitree-g1-fastlio
+# 基于宇树G1EDU+ 建图导航
 
 Unitree G1 + Livox MID360 的 ROS 2 建图与导航工作空间快照。当前仓库版本为 **v8.7**，包含 Livox 驱动、FAST-LIO、NDT 重定位、Nav2 规划、安全速度桥、地图和运行脚本。
 
